@@ -14,9 +14,9 @@ namespace Infrastructure.Data
     public class ApplicationContext : DbContext
     {
 
-        DbSet<User> Users { get; set; }
-        DbSet<Cat> Cats { get; set; }
-        DbSet<Appointment> Appointments { get; set;  }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Cat> Cats { get; set; }
+        public DbSet<Appointment> Appointments { get; set;  }
 
 
         

@@ -12,10 +12,26 @@ namespace CatsDaycare.Domain.Entites
     {
         public Client() { }
 
-        public string Name { get; set; } 
-        public string Surname { get; set; }
-        public List<Appointment> ScheduledAppointments { get; set; } = new List<Appointment>();
-        public string PhoneNumber { get; set; }
-        public List<Cat> Cats { get; set; } = new List<Cat>();
+        public string? Name { get; set; } 
+        public string? Surname { get; set; }
+        public IList<Appointment>? ScheduledAppointments { get; set; } = new List<Appointment>();
+        public string? PhoneNumber { get; set; }
+        public IList<Cat>? Cats { get; set; } = new List<Cat>();
+
+        public Client(string name, string surname, string phoneNumber, IList<Appointment> appointments, IList<Cat> cats)
+        {
+            Name = name;
+            Surname = surname;
+            PhoneNumber = phoneNumber;
+            Cats = cats ?? new List<Cat>();
+            ScheduledAppointments = appointments ?? new List<Appointment>();
+
+            // ?? operador coalescencia nula, si el primero es nulo se pasa al segundo
+        }
+
+
+
+
+
     }
 }

@@ -12,9 +12,21 @@ namespace CatsDaycare.Domain.Entites
     {
         public Nanny() { }
 
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public List<Appointment> ScheduledAppointments { get; set; } = new List<Appointment>();
-        public string PhoneNumber { get; set; }
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
+        public IList<Appointment>? ScheduledAppointments { get; set; } = new List<Appointment>();
+        public string? PhoneNumber { get; set; }
+
+
+        public Nanny(string name, string surname, string phoneNumber, IList<Appointment> appointments)
+        {
+            Name = name;
+            Surname = surname;
+            PhoneNumber = phoneNumber;
+            ScheduledAppointments = appointments ?? new List<Appointment>();
+        }
+
+
+
     }
 }

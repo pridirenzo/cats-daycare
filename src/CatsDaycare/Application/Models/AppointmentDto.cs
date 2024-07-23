@@ -2,35 +2,34 @@
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace CatsDaycare.Domain.Entites
-{ 
-    public class Appointment
+namespace Application.Models
+{
+    public class AppointmentDto
     {
-        public Appointment() { }
-
         public DateOnly? Date { get; set; }
         public Nanny? Nanny { get; set; }
         public Client? Client { get; set; }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? Id { get; set; }
         public Cat? Cat { get; set; }
 
 
-        public Appointment(DateOnly date, Nanny nanny, Cat cat, Client client, int id)
+        public static AppointmentDto Create(Appointment Appointment)
         {
-            Date = date;
-            Nanny = nanny;
-            Client = client;
-            Id = id;
-            Cat = cat;
+            var dto = new AppointmentDto();
+
+            dto.Date = Appointment.Date;
+            dto.Nanny = Appointment.Nanny;
+            dto.Client = Appointment.Client;
+            dto.Id = Appointment.Id;
+            dto.Cat = Appointment.Cat;
+
+            return dto;
         }
 
     }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Models.Dtos
+namespace Application.Services
 {
-    public class UserDto
+    internal class CatService
     {
-
     }
 }
