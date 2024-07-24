@@ -12,7 +12,8 @@ namespace Domain.Interfaces
     // segun criterio del arquitecto - interfaces de repos o en DOMAIN o en APPLICATION
     public interface IClientRepository
     {
-        public Client GetById(int id);
+        public Client? GetById(int id);
+        public Client? GetByUsername(string username);
         public IList<Client?> GetAll();
         public void Delete(int id);
         public Client Create(Client client);

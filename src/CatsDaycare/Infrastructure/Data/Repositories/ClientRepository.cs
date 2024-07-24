@@ -21,6 +21,13 @@ namespace Infrastructure.Data.Repositories
             _context = context;
         }
 
+        public Client? GetByUsername(string username)
+        {
+            var client = _context.Users.OfType<Client>().FirstOrDefault(c => c.Username == username);
+
+            return client;
+        }
+
 
         public Client? GetById(int id)
         {
@@ -28,7 +35,7 @@ namespace Infrastructure.Data.Repositories
             return client;
         }
 
-        public IList<Client> GetAll()
+        public IList<Client?> GetAll()
         {
             return _context.Users.OfType<Client>().ToList();
         }

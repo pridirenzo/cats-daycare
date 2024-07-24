@@ -43,7 +43,23 @@ namespace Application.Services
         }
         
 
-        public ClientDto GetById(int id)
+        public void UpdateClient(int id, ClientUpdateRequest request)
+        {
+            _repository.Update(id);
+            _repository.SaveChanges();
+
+        }
+
+        public Client? GetClientByUsername(string username)
+        {
+            var client = _repository.GetByUsername(username);
+
+            return client;
+          
+
+        }
+
+        public ClientDto GetClientById(int id)
         {
             var client = _repository.GetById(id);
 
@@ -52,8 +68,15 @@ namespace Application.Services
 
         }
 
-        public 
+        public void SaveChanges()
+        {
+            SaveChanges();
+        }
 
+        public IList<ClientDto> GetAllClients()
+        {
+            return _repository.GetAll();
+        }
 
 
     }

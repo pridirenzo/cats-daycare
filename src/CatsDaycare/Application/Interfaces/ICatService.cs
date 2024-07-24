@@ -11,7 +11,7 @@ namespace Application.Interfaces
     public interface ICatService
     {
         public CatDto CreateCat(CatCreateRequest request);
-        public CatDto UpdateCat(CatUpdateRequest request);
+        public void UpdateCat(CatUpdateRequest request);
         public void DeleteCat(int id);
         public CatDto GetCatById(int id);
         public IList<CatDto> GetAllCats();

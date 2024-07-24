@@ -12,7 +12,7 @@ namespace Application.Interfaces
     {
 
         public NannyDto CreateNanny(NannyCreateRequest request);
-        public NannyDto UpdateNanny(NannyUpdateRequest request);
+        public void UpdateNanny(NannyUpdateRequest request);
         public void DeleteNanny(int id);
         public NannyDto GetNannyById(int id);
         public IList<NannyDto> GetAllNannies();
